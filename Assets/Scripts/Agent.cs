@@ -29,6 +29,7 @@ public class Agent : MonoBehaviour
     void LeftVision(object sender, VisionEventArgs args)
     {
         Debug.Log($"{gameObject.name} is no longer seeing {args.collider.gameObject.name}");
+		Destroy(args.collider.gameObject, 0.4f);
     }
 
     void FixedUpdate()
