@@ -50,8 +50,11 @@ public class Sight : MonoBehaviour
             {
                 if (!inSight.Contains(coneHitCollider))
                 {
-                    inSight.Add(coneHitCollider);
-                    OnEnterVision.Invoke(this, new VisionEventArgs() {collider = coneHitCollider});
+					if (coneHitCollider.name.Contains("Enemy")) 
+					{
+                    	inSight.Add(coneHitCollider);
+                    	OnEnterVision.Invoke(this, new VisionEventArgs() {collider = coneHitCollider});
+					}
                 }
                 else
                 {

@@ -6,11 +6,20 @@ public class Agent : MonoBehaviour
 {
     [SerializeField] private Sight sight;
 
+    private float movementSpeed;
+    private float rotationSpeed;
+
     void Awake()
     {
         sight.OnEnterVision += EnteredVision;
         sight.OnLeaveVision += LeftVision;
     }
+
+	void Start()
+	{
+		movementSpeed = 10f;
+		rotationSpeed = 2f;
+	}
 
     void EnteredVision(object sender, VisionEventArgs args)
     {
@@ -36,7 +45,7 @@ public class Agent : MonoBehaviour
     {
         foreach (Collider collider in sight.inSight)
         {
-            
+
         }
     }
 
@@ -47,6 +56,12 @@ public class Agent : MonoBehaviour
 
     void Act()
     {
-        
+		
     }
+
+	void MoveTo()
+	{
+		
+	}
+
 }

@@ -18,11 +18,11 @@ public class EnemySpawner : MonoBehaviour
 		{
         	timer += Time.fixedDeltaTime;
         	if (timer >= spawnTime)
-        	{  
-            	timer -= spawnTime;
+        	{
+	            timer -= spawnTime;
             	Vector2 circlePosition = Random.insideUnitCircle.normalized * 30f;
             	//Spawn Enemy
-            	Instantiate(enemyPrefab, new Vector3(circlePosition.x , 1f, circlePosition.y), Quaternion.identity).name = $"Enemy {++numEnemies}";
+                Instantiate(enemyPrefab, new Vector3(circlePosition.x , 1f, circlePosition.y), Quaternion.identity).name = $"Enemy {++numEnemies}";
         	}
 		}
     }
