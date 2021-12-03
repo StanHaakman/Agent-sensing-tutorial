@@ -24,12 +24,16 @@ public class Agent : MonoBehaviour
     void EnteredVision(object sender, VisionEventArgs args)
     {
         Debug.Log($"{gameObject.name} sighted {args.collider.gameObject.name}");
+
+		if (args.collider.gameObject.name.Contains("Enemy"))
+		{
+			Destroy(args.collider.gameObject, 3f);
+		}
     }
     
     void LeftVision(object sender, VisionEventArgs args)
     {
         Debug.Log($"{gameObject.name} is no longer seeing {args.collider.gameObject.name}");
-		Destroy(args.collider.gameObject, 0.4f);
     }
 
     void FixedUpdate()
