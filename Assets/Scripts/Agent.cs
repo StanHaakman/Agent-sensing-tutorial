@@ -35,7 +35,7 @@ public class Agent : MonoBehaviour
     void FixedUpdate()
     {
         // To move the agent 
-        // transform.Translate(new Vector3(Time.fixedDeltaTime, 0f, 0f));
+        transform.Translate(new Vector3(Time.fixedDeltaTime, 0f, 0f));
         
         UpdateState();
         Reason();
